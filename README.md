@@ -1,7 +1,4 @@
-# ASVI
-Calculate ASVI(Abnormal Search Volume Index) of the listed companies in Taiwan using Matlab
-%%
-%Part I ASVI
+%Part I AVGSVI
 % AVGSVI 
 %%Calculate mean and standard deviation of SVI in the past 12 months
 SVI=xlsread('C:\Users\gg90180\Desktop\論文\Data\SVI.xlsx')
