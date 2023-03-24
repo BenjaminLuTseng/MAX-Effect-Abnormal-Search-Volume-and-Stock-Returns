@@ -1,0 +1,12 @@
+SVI=xlsread('C:\Users\gg90180\Desktop\論文\Data\SVI.xlsx');
+AVGSVI=xlsread('C:\Users\gg90180\Desktop\論文\Data\AVGSVI.xlsx');
+SVI=horzcat(SVI(:,2)*10000+SVI(:,1),SVI);
+AVGSVI=horzcat(AVGSVI(:,2)*10000+AVGSVI(:,1),AVGSVI);
+for i=1:size(SVI,1)
+    b=find(SVI(i,1)==AVGSVI(:,1)); %將SVI併入AVGSVI
+    AVGSVI(b,6)=SVI(i,4); 
+end
+AVGSVI(:,1)=[];
+AVGSVItitle={'CorID','Date','AVGSVI','SDSVI','SVI'}
+AVGSVIresults=vertcat(AVGSVItitle,num2cell(AVGSVI));
+xlswrite('C:\Users\gg90180\Desktop\論文\Data\SVIdata.xlsx', AVGSVIresults);
