@@ -1,1 +1,6 @@
-
+%ASVI=(SVI-AVGSVI)/SDSVI
+SVIdata=xlsread('C:\Users\gg90180\Desktop\論文\Data\SVIdata.xlsx');
+SVIdata=horzcat(SVIdata,((SVIdata(:,5)-SVIdata(:,3))./SVIdata(:,4)));
+SVIdatatitle={'CorID','Date','AVGSVI','SDSVI','SVI','ASVI'}
+SVIdataresults=vertcat(SVIdatatitle,num2cell(SVIdata));
+xlswrite('C:\Users\gg90180\Desktop\論文\Data\ASVI.xlsx', SVIdataresults);
