@@ -3,7 +3,7 @@ Calculate ASVI(Abnormal Search Volume Index) of the listed companies in Taiwan u
 %%
 %Part I ASVI
 % AVGSVI 
-%%計算svi前12個月的平均值以及標準差
+%%Calculate mean and standard deviation of SVI in the past 12 months
 SVI=xlsread('C:\Users\gg90180\Desktop\論文\Data\SVI.xlsx')
 AVGSVIall=[]; %AVGSVI of all firms
 corID=unique(SVI(:,1));
@@ -40,7 +40,7 @@ AVGSVIresults=vertcat(AVGSVItitle,num2cell(AVGSVI));
 xlswrite('C:\Users\gg90180\Desktop\論文\Data\SVIdata.xlsx', AVGSVIresults);
 
 %% Part III Calculate ASVI
-%計算ASVI=(SVI-AVGSVI)/SDSVI
+%Calculate ASVI=(SVI-AVGSVI)/SDSVI
 SVIdata=xlsread('C:\Users\gg90180\Desktop\論文\Data\SVIdata.xlsx');
 SVIdata=horzcat(SVIdata,((SVIdata(:,5)-SVIdata(:,3))./SVIdata(:,4)));
 SVIdatatitle={'CorID','Date','AVGSVI','SDSVI','SVI','ASVI'}
